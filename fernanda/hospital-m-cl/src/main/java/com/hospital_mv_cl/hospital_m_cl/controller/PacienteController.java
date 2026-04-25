@@ -26,8 +26,8 @@ public class PacienteController {
     }
 
     @PostMapping
-    public String guardar(@RequestBody Paciente paciente){
-        return "Hola";
+    public String guardar(){
+        return "hola";
     }
 
     @GetMapping("/{id}")
