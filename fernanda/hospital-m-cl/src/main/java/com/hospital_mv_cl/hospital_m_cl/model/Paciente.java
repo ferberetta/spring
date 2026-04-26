@@ -1,22 +1,20 @@
 package com.hospital_mv_cl.hospital_m_cl.model;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-import java.util.Date;
-
 @AllArgsConstructor
-@Entity
-@Table(name="paciente")
-@Data
 @NoArgsConstructor
+@Data
+@Entity
+@Table(name = "paciente")
 public class Paciente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(unique = true, length = 13, nullable = false)
     private String run;
@@ -28,8 +26,8 @@ public class Paciente {
     private String apellidos;
 
     @Column(nullable = true)
-    private LocalDate fechaNacimiento;
+    private String fechaNacimiento;
 
-    @Column (nullable = false)
+    @Column(nullable = false)
     private String correo;
 }

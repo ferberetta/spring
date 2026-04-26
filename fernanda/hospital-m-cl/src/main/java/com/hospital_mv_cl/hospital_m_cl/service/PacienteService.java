@@ -1,9 +1,11 @@
-package com.hospital_mv_cl.hospital_m_cl.sevice;
+package com.hospital_mv_cl.hospital_m_cl.service;
+
 import com.hospital_mv_cl.hospital_m_cl.model.Paciente;
 import com.hospital_mv_cl.hospital_m_cl.repository.PacienteRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -17,12 +19,11 @@ public class PacienteService {
         return pacienteRepository.findAll();
     }
 
-    public Paciente findById(long id) {
-        return pacienteRepository.findById(id).get();
+    public Paciente findById(Long id) {
+        return pacienteRepository.findById(id).orElseThrow();
     }
 
     public Paciente save(Paciente paciente) {
-        System.out.println("llegue acá");
         return pacienteRepository.save(paciente);
     }
 
